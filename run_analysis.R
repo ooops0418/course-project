@@ -1,13 +1,11 @@
 # read the base set
 
-readBaseSet <- function(filePath, filteredFeatures, features) {
-  cols_widths <- rep(-16, length(features))
-  cols_widths[filteredFeatures] <- 16
-  rawSet <- read.fwf(
-    file=filePath,
-    widths=cols_widths,
-    col.names=features[filteredFeatures])
-}
+subject_test <- read.table("subject_test.txt")
+subject_train <- read.table("subject_train.txt")
+activity_test <- read.table("y_test.txt")
+activity_train <- read.table("y_train.txt")
+data_test <- read.table("X_test.txt")
+data_train <- read.table("X_train.txt")
 
 # Merge two files
 readAdditionalFile <- function(dataDirectory, filePath) {
