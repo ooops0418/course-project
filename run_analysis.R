@@ -9,8 +9,8 @@ data_train <- read.table("X_train.txt")
 
 # Merge two files
 readAdditionalFile <- function(dataDirectory, filePath) {
-        filePathTest <- paste(dataDirectory, "/test/", filePath, "_test.txt", sep="")
-        filePathTrain <- paste(dataDirectory, "/train/", filePath, "_train.txt", sep="")
+        filePathTest <- paste(dataDirectory, "subject_test.txt", sep="")
+        filePathTrain <- paste(dataDirectory, subject"_train.txt", sep="")
         data <- c(read.table(filePathTest)[,"V1"], read.table(filePathTrain)[,"V1"])
         data
 }
