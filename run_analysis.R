@@ -15,12 +15,6 @@ readAdditionalFile <- function(dataDirectory, filePath) {
         data
 }
 
-# Clears off parentheses
-correctFeatureName <- function(featureName) {
-  featureName <- gsub("\\(", "", featureName)
-  featureName <- gsub("\\)", "", featureName)
-  featureName
-}
 
 # Read sets and returns a complete sets
 readSets <- function(dataDirectory) {
@@ -52,7 +46,6 @@ createSummaryDataset <- function(dataDirectory) {
         summary
 }
 
-
 dataDirectory <- "UCI HAR Dataset"
 if (!file.exists(dataDirectory)) {
   url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "
@@ -63,4 +56,4 @@ if (!file.exists(dataDirectory)) {
 }
 
 summary <- createSummaryDataset(dataDirectory)
-write.table(summary, "Rajesh_Tidy_Data.txt")
+write.table(summary, "tidy.txt")
